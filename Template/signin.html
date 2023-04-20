@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <!--for Responsiveness-->
+    <meta name="viewport" Content="width=device-width, initial-scale=1.0">
+    <script src="{{url_for('static', filename='signin.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='signin.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--code for Page load hone par only modal open ho-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#id01").modal('show');
+        });
+    </script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#id01').modal('show');
+        });
+    </script>
+</head>
+
+<body>
+    <!--for Responsiveness-->
+    <meta name="viewport" Content="width=device-width, initial-scale=1.0">
+    <div id="id01" class="modal">
+
+        <div class="container">
+            <form name="myform" class="modal-content" method="POST" action="/omkarmod" onsubmit="return validateform()">
+                <a href="{{ url_for('index') }}"  class="close" title="Close Modal">&times;</a>
+                <div class="imgcontainer">
+
+                    <img src="{{url_for('static', filename='img_avatar2.jpg')}}" alt="Avatar" class="avatar">
+                </div>
+                <hr>
+                <center>
+                    <div>
+                        <br><br>
+                        <h3><b>{{sin_text}}</b></h3>
+                    </div>
+                </center>
+                <h4 class="dot">Sign In</h4>
+                <hr>
+                <h1>User name</h1> <input type="text" name="uname"><br />
+               
+
+                <h1>Password:</h1> <input type="password" name="passf"><br />
+               
+                <div class="clearfix">
+                    <button type="reset" class="cancelbtn">Cancel</button>
+                    <button type="submit" id="2" name="submit" class="signupbtn">Sign In</button>
+                </div>
+                <br>
+                <p>Please Create an Account and Signup First<a href="{{ url_for('om') }}" style="color: doderblue;">SignUp</a></p>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

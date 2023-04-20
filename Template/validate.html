@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--for Responsiveness-->
+    <meta name="viewport" Content="width=device-width, initial-scale=1.0">
+    <script src="{{url_for('static', filename='signin.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='signin.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--code for Page load hone par only modal open ho-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#id01").modal('show');
+        });
+    </script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#id01').modal('show');
+        });
+    </script>
+</head>
+<body>
+    <!--for Responsiveness-->
+    <meta name="viewport" Content="width=device-width, initial-scale=1.0">
+    <div id="id01" class="modal">
+
+        <div class="container">
+            <form action="/validate" class="modal-content" method="post"  enctype="multipart/form-data">
+           
+                <a href="{{ url_for('index') }}"  class="close" title="Close Modal">&times;</a>
+                <div class="imgcontainer">
+                                            
+                    <img src="{{url_for('static', filename='img_avatar2.jpg')}}" alt="Avatar" class="avatar">
+                </div>
+                <hr>
+                <center>
+                    <div>
+                        <br><br>
+                        <h3><b>{{otp_txt}}</b></h3>
+                    </div>
+                </center>
+                <h4 class="dot">OTP verification</h4>
+                <hr>
+               
+                <h1>Enter OTP</h1> <input type="text"  name="otp"><br />
+        
+                <div class="clearfix">
+                    <button type="reset" class="cancelbtn">Cancel</button>
+                    <button type="submit"  id="2" name="submit" class="signupbtn">Submit</button>
+                </div>
+                <br>
+               
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
